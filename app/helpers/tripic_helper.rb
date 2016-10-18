@@ -1,0 +1,2 @@
+module TripicHelper
+end
