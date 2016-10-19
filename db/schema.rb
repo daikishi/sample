@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018063551) do
+ActiveRecord::Schema.define(version: 20161018075030) do
 
   create_table "notes", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20161018063551) do
     t.string   "prefecture", limit: 255
     t.text     "adress",     limit: 65535
     t.string   "user_id",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.text     "email",      limit: 65535
+    t.string   "password",   limit: 255
+    t.string   "nickname",   limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end

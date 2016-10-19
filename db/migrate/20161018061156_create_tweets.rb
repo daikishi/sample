@@ -4,8 +4,8 @@ class CreateTweets < ActiveRecord::Migration
       t.string      :nickname
       t.text        :image
       t.text        :text
-      t.string		:prefecture
-      t.text		:adress
+      t.string		  :prefecture
+      t.text		    :adress
       t.string      :user_id
       t.timestamps
     end
