@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022050426) do
+ActiveRecord::Schema.define(version: 20161023082216) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "tweet_id",   limit: 4
+    t.text     "text",       limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tweets", force: :cascade do |t|
-    t.string   "nickname",   limit: 255
     t.text     "image",      limit: 65535
     t.text     "text",       limit: 65535
     t.string   "prefecture", limit: 255
@@ -35,6 +42,8 @@ ActiveRecord::Schema.define(version: 20161022050426) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
+    t.string   "nickname",               limit: 255
+    t.string   "string",                 limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
